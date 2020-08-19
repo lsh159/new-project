@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<title>테크보이 워니</title>      // 크롬창 다중창 이름
+		<link href="style.css" rel= "stylesheet"
+			type="text/css"/>        
+		<meta name ="description" content ="워니의 문서">   
+		//다른데 공유할 때 간략 설명이 메타 테그 역할
+		
+		<style >
+			.item {color: red; }
+			.이름 {내용}
+			.top {background : red ;   height:100px;}
+			.mid {background : blue ;   height:100px;}
+			.bot {background : yellow ;   height:100px;}
+		</style>
+
+
+	</head>
+
+
+
+	<body>
+		
+
+//텍스트 관련 태그들 
+
+<h1>안녕하세요</h1>   // 보통 글씨 크게하는 (제목용) 표준 태그
+<h1,2,3,4,5,6>
+
+<b>   볼드체 <i> 기움체  <p> 문단나누기
+
+
+//미디아 관련 태그들
+
+<img src="https//사진소스 주소"/>
+<video src="https//비디오소스 주소"/>
+<a herf="google.com">구글</a>
+<a herf="facebook.com", target="_blank">페북</a>   타겟 블랭크는 새창
+
+
+//테ㅣ블 관련 태그
+
+<table border= "1" >
+	<thead>
+		<tr>이름</th>
+		<th>나이</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>워니</td>
+			<td>3살</td>
+		</tr>
+
+//목록태그
+
+	<ol>
+		<li>워니</li>            //1.워니\n 2.제니
+		<li>제니</li>
+	</ol>
+
+	<ul>
+		<li>워니</li>  		//원형기호 워니\n 원형기호 제니
+		<li>제니</li>		
+	</ul>
+
+//구역을 나누는 태그
+
+
+<div class="top">상단</div>
+<span class= "like">좋아요</span>
+
+
+
+// 인풋 태그
+
+<input type= "text"/>
+<input type= "checkbox"/>
+<input type= "radio"/>
+<input type= "color"/>
+<textarea></textarea>
+<select name="name">   드랍다운
+<option value = "워니">워니</option>
+<option value = "제니">제니</option>
+
+
+
+	</body>
+
+</html>
+
+
+
+[style.css] 파일   == 헤더 파일 역할. <style> 태그안에 넣을 복잡할 것들 정리해놓고, 모듈화
+				다음에도 다시 쓸수 있음

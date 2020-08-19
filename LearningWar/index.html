@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning War</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/2d323a629b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js" defer></script>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="navbar__logo">
+        <i class="fas fa-jedi"></i>
+        <a href="">Learning <my>War</my></a>
+      </div>
+
+      <ul class="navbar__menu">
+        <li><a href="">Matching</a></li>
+        <li><a href="">Arena</a></li>
+        <li><a href="">Custom</a></li>
+        <li><a href="">Suggestions Board</a></li>
+        <li><a href="">FAQ</a></li>
+      </ul>
+
+      <div class="navbar__icons">
+        <li><i class="fab fa-facebook"></i></li>
+        <li><i class="fab fa-twitter"></i></li>
+        <li><i class="fab fa-google-play"></i></li>
+      </div>
+
+      <a href="#" class="navbar__toggleBtn">
+        <i class="fas fa-chess"></i>
+      </a>
+    </nav>
+
+    <div class="haha">
+      내사이트임 ㄳㅁ 9단 ㅎㅇ
+    </div>
+    <input id="bookName" value="" type="text" />
+    <button id="search">검색</button>
+    <p></p>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#search").click(function () {
+          $.ajax({
+            method: "GET",
+            url: "https://dapi.kakao.com/v3/search/book?target=title",
+            data: { query: $("#bookName").val() },
+            headers: {
+              Authorization: "KakaoAK 50d5fb83d71a374105888a524aa8cb1a",
+            },
+          }).done(function (msg) {
+            alert(
+              msg.documents[0].title +
+                "외 검색결과 " +
+                msg.meta.pageable_count +
+                "개 검색 완료. "
+            );
+            console.log(msg);
+            console.log(msg.documents[0].title);
+            console.log(msg.documents[0].thumbnail);
+            for (var i = 0; i < msg.meta.pageable_count; i++) {
+              $("p").append("<strong>" + msg.documents[i].title + "</strong>");
+              $("p").append("<img src='" + msg.documents[i].thumbnail + "'/>");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
